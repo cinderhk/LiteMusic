@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cinderhk.litemusic.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cinderhk.litemusic.entity.User">
+        <id column="user_id" property="userId" />
+        <result column="username" property="username" />
+        <result column="email" property="email" />
+        <result column="password_hash" property="passwordHash" />
+        <result column="gender" property="gender" />
+        <result column="signup_date" property="signupDate" />
+        <result column="status" property="status" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <select id="findByUsername" resultMap="BaseResultMap">
+        SELECT *
+        FROM user
+        WHERE username = #{username}
+    </select>
+
+
+
+</mapper>
