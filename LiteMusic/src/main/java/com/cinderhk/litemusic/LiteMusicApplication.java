@@ -5,7 +5,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.cinderhk.litemusic"})
+@SpringBootApplication(scanBasePackages= {"com.cinderhk.litemusic"})
 @MapperScan("com.cinderhk.litemusic.mapper")
 public class LiteMusicApplication {
 
