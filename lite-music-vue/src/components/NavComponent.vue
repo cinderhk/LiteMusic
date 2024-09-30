@@ -7,16 +7,17 @@
             酷我音乐
           </h1>
           <div class="links">
-
-            <NavLink><router-link exact to="/">首页</router-link></NavLink>
+            <NavLink><router-link exact to="/home">首页</router-link></NavLink>
             <NavLink><router-link exact to="/topic">排行榜</router-link></NavLink>
-            <NavLink><router-link exact to="/mine">我的</router-link></NavLink>
-            <NavLink><router-link exact to="/search">搜索</router-link></NavLink>
-          
+            <NavLink><router-link exact to="/musician">歌手</router-link></NavLink>
+            <NavLink><router-link exact to="/mine">我的</router-link></NavLink>            
           </div>
         </div>
       <div class="right">
               <SearchBar />
+      </div>
+      <div class="right">
+        <a @click="login">登录</a>
       </div>
     </Nav>
   </header>
@@ -25,9 +26,21 @@
 
 <script>
 import SearchBar from './SearchComponent.vue';
+import { useRouter } from 'vue-router';
 export default {
   components: {
     SearchBar,
+  },
+  setup() {
+    const router = useRouter();
+
+    const login = () =>{
+      router.push("/login");
+    };
+    
+    return {
+      login
+    }
   }
 }
 </script>
@@ -73,7 +86,7 @@ export default {
 
           &.active {
             font-weight: 600;
-            background: #ffe443;
+            /* background: #ff4343; */
           }
         }
       }

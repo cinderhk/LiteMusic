@@ -2,8 +2,7 @@
   <div class="search">
     <input
         ref={refInput}
-       
-        placeholder="搜索音乐/MV/歌单/歌手"
+        placeholder="搜索音乐"
         type="text"
       />
     <SearchTip searchKey={searchKey} canShow={canShowTip} setCanShow={setCanShowTip} refInput={refInput} />
@@ -16,7 +15,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 240px;
+  width: 280px;
   height: 34px;
   padding: 0 10px;
   margin-right: 28px;
