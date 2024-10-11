@@ -1,0 +1,45 @@
+.banner {
+  width: 100%;
+  margin-top: 20px;
+
+  .top {
+    position: relative;
+    max-height: 400px;
+
+    :global(.swiper-button-prev),
+    :global(.swiper-button-next) {
+      top: 50%;
+      width: 60px;
+      height: 60px;
+      margin-top: calc(0px - (60px / 2));
+      color: rgb(255 255 255 / 60%);
+      background-color: rgb(0 0 0 / 20%);
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.1s;
+
+      &::after {
+        font-size: 22px;
+      }
+
+      &:hover {
+        color: rgb(255 255 255 / 90%);
+      }
+    }
+
+    :global(.swiper-button-prev) {
+      left: 30px;
+    }
+
+    :global(.swiper-button-next) {
+      right: 30px;
+    }
+
+    &:hover {
+      :global(.swiper-button-prev),
+      :global(.swiper-button-next) {
+        opacity: 1;
+      }
+    }
+  }
+}
