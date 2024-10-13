@@ -2,8 +2,9 @@
     <NavComponent></NavComponent>
     <main class="container">
         <RouterView></RouterView>
-        
+          
     </main>
+
     <FooterComponent></FooterComponent>
     
       
@@ -17,7 +18,5 @@
 </script>
 
 <style lang="scss" scoped>
-    @import url(../assets/common.scss);
-
 
 </style>

@@ -1,28 +1,23 @@
 <template>
     <footer class="footer">
-        <!-- <div className="container"> -->
-        <p>
-          开发者：
-          <a class="link" href="https://github.com/LiteMusic-web">
-            cinderhk
-          </a>
-        </p>
-        <p>
-          本项目完全仿照
-          <a class="link" href="https://www.kuwo.cn/">
-            酷我音乐
-          </a>
-          制作，已开源在 Github 上，采用{' '}
-          <a class="link" href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">
-            GPL v3
-          </a>{' '}
-          开源协议
-        </p>
-        <p>
-          本项目所有用到的图片、接口均由网络公开内容收集整理而来，仅用于学习和研究目的，不得用于商业用途。任何个人或组织不得将其用于违法用途，否则后果自负
-        </p>
-      <!-- </div> -->
-
+        <div className="container">
+            <p>
+                开发者：
+                <a class="link" href="https://github.com/cinderhk/LiteMusic">
+                    cinderhk
+                </a>
+            </p>
+            <p>
+                本项目已开源在 Github 上，采用
+                <a class="link" href="https://opensource.org/licenses/MIT">
+                    MIT
+                </a>
+                开源协议
+            </p>
+            <p>
+                本项目仅用于学习和研究目的，不得用于商业用途，任何个人或组织不得将其用于违法用途，否则后果自负
+            </p>
+        </div>
     </footer>
 </template>
 
@@ -31,6 +26,27 @@
 </script>
 
 <style lang="scss" scoped>
-    @import url(./Footer.module.scss);
+.footer {
+margin-top: 20px;
+width: 100%;
+padding: 5px 0;
+font-size: 14px;
+font-weight: 100;
+color: grey;
+text-align: center;
+background: #1f1f1f;
 
+    p {
+        margin: 14px 0;
+
+        .link {
+            color: grey;
+            text-decoration: none;
+
+            &:hover {
+                color: #ffe443;
+            }
+        }
+    }
+}
 </style>

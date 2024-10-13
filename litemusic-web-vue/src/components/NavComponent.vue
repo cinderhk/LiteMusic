@@ -1,5 +1,5 @@
 <template>
-    <header class="wrapper_">
+    <header class="wrapper">
         <nav class="container">
             <div class="left">
             <h1 class="logo">
@@ -24,11 +24,77 @@
     
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
     import SearchBar from "@/components/SearchBarComponent.vue"
     
 
 </script>
-<style lang="scss">
-@import url(./Nav.module.scss);
+<style lang="scss" scoped>
+.wrapper {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  height: 67px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .left {
+      display: flex;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-right: 39px;
+        font-size: 0;
+
+        img {
+          width: 139px;
+          object-fit: cover;
+        }
+      }
+
+      .links {
+        display: flex;
+        gap: 4px;
+
+        a {
+          padding: 0 14px;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 67px;
+          color: #333;
+          text-decoration: none;
+
+          &.active {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .login {
+        font-size: 14px;
+        line-height: 67px;
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
 </style>

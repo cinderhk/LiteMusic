@@ -1,5 +1,4 @@
 <template>
-    
     <section class="banner">
         <div class="top">
         <Swiper
@@ -19,7 +18,7 @@
     </section>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
     import { ref } from 'vue';
     import { Swiper, SwiperSlide } from 'swiper/vue';
     import { Pagination, Navigation, Autoplay } from 'swiper/modules';
@@ -49,5 +48,18 @@
 </script>
 
 <style lang="scss" scoped>
-    @import './Banner.module.scss';
+
+.banner {
+  width: 100%;
+  margin-top: 20px;
+
+  .top {
+    position: relative;
+    max-height: 400px;
+  }
+}
+
+       
+
+
 </style>

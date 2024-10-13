@@ -1,12 +1,8 @@
 <template>
-
     <div class="item" v-for="item in PlayListCard " :key="item.id">
         <router-link :to="`/playlistinfo/${item.id}`"><img :src="item.url" referrerpolicy="no-referrer" alt="" class="pic"/></router-link>
         <p class="name">{{ item.name }}</p>
     </div>
-    
-    
-    
     
 </template>
 
@@ -51,5 +47,25 @@
 </script>
 
 <style lang="scss" scoped>
-    @import url(./PlayListCardComponent.module.scss);
+.item {
+    width: 100%;
+    .pic {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+  
+      img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.75s cubic-bezier(0, 1, 0.75, 1);
+      }
+    }  
+    .name {
+      margin-top: 16px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+}
+  
 </style>

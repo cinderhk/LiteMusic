@@ -14,7 +14,7 @@ const router = createRouter({
       path: "/",
       name: "LayoutView",
       component: LayoutView,
-      // redirect: "/home",
+      redirect: "/home",
       children: [
         {
         path: "/home",
@@ -45,8 +45,6 @@ const router = createRouter({
         
       ],
     },
-   
-  
     {
       path: "/login",
       name: "LoginView",
