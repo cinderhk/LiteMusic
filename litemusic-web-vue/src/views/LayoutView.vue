@@ -1,14 +1,23 @@
 <template>
-    <div>
-      <NavComponent></NavComponent>
-      <router-view></router-view>
-    </div>
+    <NavComponent></NavComponent>
+    <main class="container">
+        <RouterView></RouterView>
+        
+    </main>
+    <FooterComponent></FooterComponent>
+    
+      
+    
 </template>
-<script>
-    import NavComponent from "@/components/NavComponent.vue";
-    export default {
-    components: {
-        NavComponent,
-    },
-    };
+
+<script setup>
+    import NavComponent from "../components/NavComponent.vue";
+    import FooterComponent from "@/components/FooterComponent.vue";
+    
 </script>
+
+<style lang="scss" scoped>
+    @import url(../assets/common.scss);
+
+
+</style>

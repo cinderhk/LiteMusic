@@ -1,22 +1,15 @@
 <template>
-  <BannerComponent></BannerComponent>
-  <RecommendComponent></RecommendComponent>
-  <PlayListCardComponent></PlayListCardComponent>
-  <router-view></router-view>
+    
+    <BannerComponent></BannerComponent>
+    <RecommendComponent></RecommendComponent>     
+    
 </template>
 
-<script>
-import BannerComponent from '@/components/BannerComponent.vue';
-import RecommendComponent from '@/components/RecommendComponent.vue';
-import PlayListCardComponent from '@/components/PlayListCardComponent.vue';
-export default {
-  components: {
-    BannerComponent,
-    RecommendComponent,
-    PlayListCardComponent
-  },
-};
+<script setup lang="ts">
+    import BannerComponent from '@/components/BannerComponent.vue';
+    import RecommendComponent from '@/components/RecommendComponent.vue';
 </script>
-<style lang="scss" scoped>
+
+<style scoped>
 
 </style>

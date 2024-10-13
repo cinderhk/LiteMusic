@@ -14,7 +14,7 @@ const router = createRouter({
       path: "/",
       name: "LayoutView",
       component: LayoutView,
-      redirect: "/home",
+      // redirect: "/home",
       children: [
         {
         path: "/home",
@@ -23,28 +23,30 @@ const router = createRouter({
         },
         
         {
-          path: "topic",
+          path: "/topic",
           name: "TopicView",
           component: TopicView,
         },
         {
-          path: "musician",
+          path: "/musician",
           name: "MusicianView",
           component: MusicianView,
         },
         {
-          path: "mine",
+          path: "/mine",
           name: "MineView",
           component: MineView,
         },
         {
-          path: "playlistinfo",
+          path: '/playlistinfo/:id',
           name: "PlayListInfo",
           component: PlayListInfoView,
         },
         
       ],
     },
+   
+  
     {
       path: "/login",
       name: "LoginView",

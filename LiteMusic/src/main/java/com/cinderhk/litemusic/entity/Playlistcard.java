@@ -17,7 +17,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author dxy
- * @since 2024-10-10
+ * @since 2024-10-11
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -39,6 +39,9 @@ public class Playlistcard implements Serializable {
 
     @ApiModelProperty(value = "播放列表卡片记录的创建时间")
     private LocalDateTime createdAt;
+
+    @ApiModelProperty(value = "播放列表卡片歌单信息")
+    private String info;
 
 
 }

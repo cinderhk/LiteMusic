@@ -1,16 +1,17 @@
 <template>
-  <div class="search">
-    <input
-        ref={refInput}
-        placeholder="搜索音乐"
-        type="text"
-      />
-  </div>
+    <div class="search">
+        <input
+            ref={refInput}
+            placeholder="搜索音乐"
+            type="text"
+        />
+    </div>
 </template>
-<script>
+<script lang="ts" setup>
+
 </script>
 
 <style lang="scss" scoped>
-@import url(./SearchBar.module.scss);
+    @import url(./SearchBar.module.scss);
 
 </style>

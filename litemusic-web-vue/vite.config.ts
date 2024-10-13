@@ -14,6 +14,17 @@ export default defineConfig({
     }
   },
   server: {
-    port: 3000
-  }
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: "http://127.0.0.1:8080", // 动态设置目标服务器地址
+        changeOrigin: true,
+        rewrite(path) {
+          return path.replace(/^\/api/, ''); // 移除路径中的 /api 前缀
+        },
+        secure: false
+      }
+    }
+
+  },
 })

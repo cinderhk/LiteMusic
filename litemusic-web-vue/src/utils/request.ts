@@ -9,6 +9,7 @@ const service = axios.create({
     // axios中请求配置有baseURL选项，表示请求URL公共部分
     baseURL: BASE_URL,
     // 超时
+
     timeout: 10000
   })
 
@@ -23,7 +24,6 @@ export const getBannerList = async () => {
 
 export const getPlayListCard = async () => {
     try {
-
         const response = await service.post('/playlistcard/list');
         return response.data;
     } catch (error) {
@@ -31,14 +31,14 @@ export const getPlayListCard = async () => {
     }
 };
 
-export const getPlayListCardById = async (id:number) => {
-    try {
-      const response = await service.post('/playlistcard/ById', { id });
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  };
+export const getPlayListCardById = async (id: number) => {
+  try {
+    const response = await axios.post(`/api/playlistcard/ById?id=`+ id );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
   
 
 

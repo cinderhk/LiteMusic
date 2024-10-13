@@ -8,6 +8,7 @@
         <result column="name" property="name" />
         <result column="url" property="url" />
         <result column="created_at" property="createdAt" />
+        <result column="info" property="info" />
     </resultMap>
 
 </mapper>

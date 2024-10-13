@@ -1,32 +1,27 @@
 <template>
-    <div class="container">
-        
-        <section class="wrapper">
 
-            <div class="list">
-                <div class="item" v-for="item in PlayListCard " :key="item.id">
-                    <router-link :to="`/playlistinfo/${item.id}`"><img :src="item.url" referrerpolicy="no-referrer" alt="" class="pic"/></router-link>
-                    <p class="name">{{ item.name }}</p>
-                </div>
-                
-            </div>
-           
-        </section>
+    <div class="item" v-for="item in PlayListCard " :key="item.id">
+        <router-link :to="`/playlistinfo/${item.id}`"><img :src="item.url" referrerpolicy="no-referrer" alt="" class="pic"/></router-link>
+        <p class="name">{{ item.name }}</p>
     </div>
+    
+    
+    
+    
 </template>
 
 <script setup lang="ts">
-    import router from "@/router";
     import { getPlayListCard } from "../utils/request"
-    import { ref } from "vue";
+    import { ref, computed } from "vue";
 
     const PlayListCard = ref([{
         id:"",
         name:"",
         url:"",
-        create_at:""
+        create_at:"",
+        info:""
    
-    }])
+    }]);
 
     const fetchPlayListCard = async () => {
     try {
@@ -39,27 +34,22 @@
     };
 
     fetchPlayListCard(); // 直接在 setup 中调用函数
+   // 洗牌算法（Fisher-Yates shuffle）
+    function shuffleArray(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+    }
+
+    const shuffledPlayListCard = computed(() => shuffleArray([...PlayListCard.value]));
+    const randomFiveCards = computed(() => shuffledPlayListCard.value.slice(0, 5));
 
 
 
 </script>
 
 <style lang="scss" scoped>
-@import url(./Recommend.module.scss);
-@import url(./PlayListCardComponent.module.scss);
-.wrapper {
-  margin-top: 300px;
-
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 26px 1.41%;
-  }
-
-  .paginate {
-    display: flex;
-    justify-content: center;
-    margin-top: 48px;
-  }
-}
+    @import url(./PlayListCardComponent.module.scss);
 </style>

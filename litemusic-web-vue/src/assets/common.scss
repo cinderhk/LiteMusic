@@ -17,7 +17,7 @@
   }
   
   #root {
-    position: relative;
+    position: fixed;
     min-height: 100vh;
     padding-bottom: 290px;
   }
@@ -27,6 +27,7 @@
     max-width: 1640px;
     padding: 0 120px;
     margin: 0 auto;
+ 
   }
   
   @media screen and (width <= 1200px) {

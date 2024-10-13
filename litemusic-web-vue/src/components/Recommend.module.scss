@@ -68,40 +68,16 @@
   .bottom {
     display: flex;
     justify-content: space-between;
-  }
-}
 
-.rank {
-  margin-top: 60px;
-
-  .top {
-    display: flex;
-    align-items: end;
-    margin-bottom: 24px;
-
-    h2 {
-      margin-right: 40px;
-      font-size: 28px;
-      font-weight: 600;
-      color: #333;
-      letter-spacing: 1px;
-    }
-
-    .more {
+    .list {
       display: flex;
-      align-items: center;
-      font-size: 13px;
-      color: #999;
-      text-decoration: none;
+      flex-wrap: wrap;
 
-      svg {
-        margin-left: 2px;
+      li {
+        margin: 0 10px 10px 0;
+        background-color: #f7f7f7;
       }
     }
   }
 
-  .bottom {
-    display: flex;
-    justify-content: space-between;
-  }
 }
