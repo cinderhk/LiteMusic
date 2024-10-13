@@ -8,7 +8,7 @@ import LoginView from  "@/views/LoginView.vue";
 import PlayListInfoView from '@/views/PlayListInfoView.vue';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path: "/",
