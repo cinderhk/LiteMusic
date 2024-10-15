@@ -11,9 +11,9 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.1.5",
     "@vue/cli-plugin-typescript": "^5.0.8",
     "axios": "^1.7.7",
-    "modern-normalize": "^3.0.1",
     "pinia": "^2.1.7",
     "postcss": "^8.4.47",
     "postcss-loader": "^8.1.1",

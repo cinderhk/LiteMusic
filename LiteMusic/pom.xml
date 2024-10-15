@@ -132,7 +132,6 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.cinderhk.litemusic.LiteMusicApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>

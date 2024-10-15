@@ -7,5 +7,9 @@
         <result column="id" property="id" />
         <result column="musicrid" property="musicrid" />
     </resultMap>
-
+    <select id="listById" resultMap="BaseResultMap">
+        SELECT *
+        FROM playlistinfo
+        WHERE id = #{id}
+    </select>
 </mapper>

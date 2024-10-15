@@ -1,9 +1,10 @@
 <template>
   <div>我的</div>
-  <RouterView></RouterView>
-</template>
-<script>
-import { RouterView } from 'vue-router';
 
-export default {};
+  <PlayCircleIcon className="h-6 w-6 text-gray-400 rotate-45" />
+
+</template>
+<script setup>
+
+
 </script>

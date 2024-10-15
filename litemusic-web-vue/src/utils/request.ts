@@ -33,9 +33,31 @@ export const getPlayListCardById = async (id: number) => {
   }
 };
 
+export const getPlayListInfoById = async (id: number) => {
+  try {
+    const response = await axios.post(`/api/playlistinfo/listById?id=`+ id );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
+
+export const getMusic_UrlById = async (musicrid: number,id:number) => {
+  try {
+    const response = await axios.post(`/api/music_url/ById?musicrid=`+ musicrid +`&uid=` + id );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 
 export default {
     getBannerList,
     getPlayListCard,
-    getPlayListCardById
+    getPlayListCardById,
+    getPlayListInfoById,
+    getMusic_UrlById
 };

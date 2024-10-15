@@ -7,7 +7,7 @@ spring:
     url: jdbc:mysql://localhost:3306/litemusic?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: hqdxy
+    password: hqdxy.1008
 
   mvc:
     pathmatch:
