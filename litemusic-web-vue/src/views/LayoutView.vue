@@ -6,12 +6,14 @@
     </main>
 
     <FooterComponent></FooterComponent>
+    <PlayComponent></PlayComponent>
     
       
     
 </template>
 
 <script setup>
+    import PlayComponent from "@/components/PlayComponent.vue";
     import NavComponent from "../components/NavComponent.vue";
     import FooterComponent from "@/components/FooterComponent.vue";
     
