@@ -52,7 +52,6 @@ CREATE TABLE `cos_config`  (
 -- ----------------------------
 -- Records of cos_config
 -- ----------------------------
-INSERT INTO `cos_config` VALUES ('AKID4MZfuor6T6thYen2Yks5HpNuUF1pjuDg', 'kU0b5fM8xw5JdAnJxa5sdSFxfJ7yyywq', 'cinderhk-music-1305037069', 'ap-nanjing');
 
 -- ----------------------------
 -- Table structure for music_url
