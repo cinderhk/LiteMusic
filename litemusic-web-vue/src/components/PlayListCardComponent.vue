@@ -1,7 +1,9 @@
 <template>
     <div class="item" v-for="item in PlayListCard " :key="item.id">
         <div class="itempic">
-            <i class="icon_play"><PlayIcon @click="Start_PlayListCard(parseInt(item.id))"/></i>
+            
+            <Icon icon="ri:play-fill" @click="Start_PlayListCard(parseInt(item.id))" class="icon_play"/>
+           
             <img :src="item.url" referrerpolicy="no-referrer" alt=""/>
         </div>
         <p class="name" @click="toPlayInfo(item.id)">{{ item.name }}</p>
@@ -12,7 +14,7 @@
 <script setup lang="ts">
     import { getPlayListCard,getPlayListInfoById,getMusic_UrlById } from "../utils/request"
     import { ref, computed } from "vue";
-    import { PlayIcon } from '@heroicons/vue/24/solid'
+    import { Icon } from '@iconify/vue';
     import router from "@/router";
 
 

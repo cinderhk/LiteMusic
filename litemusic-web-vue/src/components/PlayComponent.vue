@@ -17,15 +17,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="play_centre">播放样式</div> 
-                <div class="play_right">调节音量</div>                    
+                <div class="play_centre">
+                    
+                    <Icon icon="si:play-previous-duotone" class="play_pre" />
+                    <Icon icon="prime:play-circle" class="play-circle"/>
+                    <!-- <Icon icon="prime:pause-circle" class="play-circle"/> -->
+                    <Icon icon="si:play-next-duotone" class="play_next"/>
+                
+                         
+                </div> 
+                <div class="play_right">
+                    
+                    <Icon icon="material-symbols-light:playlist-play-rounded" class="playlist"/>
+                    <Icon icon="iconoir:download" class="download"/>
+                    <!-- <Icon icon="iconoir:sound-off" class="sound-off"/> -->
+                    <div class="volume-control">
+                        <Icon icon="iconoir:sound-high" class="sound-high"/>
+                        <input type="range" min="0" max="1" step="0.05" v-model="volumeLevel" @change="setVolume" />
+                    </div>
+                </div>                    
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watchEffect } from 'vue';
+    import { ref, onMounted, watchEffect } from 'vue';
+    import { Icon } from '@iconify/vue';
 
 // 示例音频文件路径
 const audioSrc = 'path/to/audio.mp3';
@@ -67,6 +85,14 @@ onMounted(() => {
         audioElement.removeEventListener('loadedmetadata', () => {});
     };
 });
+
+// 音量控制相关变量
+const volumeLevel = ref(0.5); // 默认音量为50%
+
+// 设置音量的方法
+function setVolume() {
+    audioElement.volume = volumeLevel.value;
+}
 </script>
 
 <style scoped>
@@ -142,4 +168,66 @@ onMounted(() => {
     background-color: #f00;
     width: 0%;
 }
+.playControl .play_content .control .play_centre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 300px;
+}
+.playControl .play_content .control .play_centre .play_pre {
+    width: 24px;
+    height: 24px;
+}
+.playControl .play_content .control .play_centre .play-circle {
+    width: 40px;
+    height: 40px;
+}
+.playControl .play_content .control .play_centre .play_next {
+    width: 24px;
+    height: 24px;
+}
+.playControl .play_content .control .play_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 300px;
+}
+.playControl .play_content .control .play_right .download {
+    width: 24px;
+    height: 24px;
+}
+.playControl .play_content .control .play_right .playlist {
+    width: 24px;
+    height: 24px;
+}
+.playControl .play_content .control .play_right .sound-high {
+    width: 24px;
+    height: 24px;
+}
+.playControl .play_content .control .play_right .sound-off {
+    width: 24px;
+    height: 24px;
+}
+/* 添加到你的 .play_right 样式后面 */
+.playControl .play_content .control .play_right .volume-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.playControl .play_content .control .play_right .volume-control input[type=range] {
+    -moz-appearance: none; /* 移除默认样式 */
+    height: 3px;
+    margin-left: 10px;
+    width: 100px; /* 调整滑块长度 */
+    cursor: pointer;
+}
+.playControl .play_content .control .play_right .volume-control input[type=range]::-moz-range-track {
+    background: #ffdf1f; /* 轨道颜色 */
+    border: none; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+}
+
+
 </style>
